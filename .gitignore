@@ -5,8 +5,6 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
-.env.backup
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -34,7 +32,6 @@ public_html/storage
 public_html/hot
 
 storage/*.key
-.env
 Homestead.yaml
 Homestead.json
 /.vagrant
