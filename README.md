@@ -31,9 +31,6 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-## Laravel Weather Application
-In this application we are fetching simple weather data of any city like temperature, humidity, weather condition, wind speed etc. We are using Open Weather Map API (https://openweathermap.org/api) to fetch live weather condition. Here user can serach weather data by city name and maintain a list of pre-search result in database table for faster response time. Caching mechanism is also implemented along with database indexing to optimize the response time. User also can delete or sync latest data via direct API call. 
-
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**

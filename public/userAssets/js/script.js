@@ -144,7 +144,7 @@ $(".showWeatherDetails").on('click', function() {
     $("#desc_pressure").text(pressure+'Pa');
     $("#desc_wind").text(wind_speed+'Km/H');
 
-    $("#exampleModal").modal('show');
+    $("#weatherDetailsModal").modal('show');
 });
 
 //Updating or deleting on click function based on action type

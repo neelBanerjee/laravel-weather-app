@@ -10,15 +10,21 @@
                     <button type="button" class="btn btn-primary btn-sm" id="search_weather_data">
                         <i class="fa fa-search"></i> Search Weather Data
                     </button>
-                    <button type="button" class="btn btn-success btn-sm handleCache" data-ctype="create">
-                        <i class="fa fa-cogs"></i> Generate Cache
-                    </button>
+                    @if(Cache::has('weatherCollection'))
+                        <button type="button" class="btn btn-danger btn-sm handleCache" data-ctype="destroy">
+                            <i class="fa fa-cogs"></i> Clear Cache
+                        </button>
+                    @else    
+                        <button type="button" class="btn btn-success btn-sm handleCache" data-ctype="create">
+                            <i class="fa fa-cogs"></i> Generate Cache
+                        </button>
+                    @endif    
                 </div>    
             </div>
         </div>
         <div class="card-body">
             <ul>
-                <li>You are Logined in Laravel Weather Measure Application.</li>
+                <li>You are Logged into the Laravel Weather Measure Application.</li>
                 <li>Fetch weather by city name and it will automatically be added into the list.</li>
                 <li>You can also view, delete and sync latest weather data for each city on the list.</li>
                 <li>Clear or generate cache data for faster response time.</li>
@@ -85,9 +91,6 @@
                                     <i class="fa fa-refresh"></i> Refresh Table Data
                                 </button>
                             </a>
-                            <button type="button" class="btn btn-danger btn-sm handleCache" data-ctype="destroy">
-                                <i class="fa fa-cogs"></i> Clear Cache
-                            </button>
                         </div>    
                     </div>
                 </div>
@@ -114,7 +117,7 @@
                                 <tr>
                                     <th scope="row">{{ $index + 1 }}</th>
                                     <td>{{ $weather->city }}</td>
-                                    <td>{{ $weather->description }}</td>
+                                    <td>{{ ucwords($weather->description) }}</td>
                                     <td>{{ $weather->temperature }}°C</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-sm showWeatherDetails" data-wid="{{ $weather->id }}">
@@ -142,7 +145,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="weatherDetailsModal" tabindex="-1" role="dialog" aria-labelledby="weatherDetailsModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

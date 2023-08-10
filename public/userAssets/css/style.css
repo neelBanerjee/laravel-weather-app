@@ -15,7 +15,7 @@ body{
 }
 
 .header{
-    width: 400px;
+    width: 100%;
     background: #c3efd9;
     padding: 20px 20px;
     margin-bottom: 20px;

@@ -80,7 +80,7 @@ class WeatherController extends Controller
         if ($isSuccess) {
 
             // Clearning cached weather data
-            Cache::forget('weather');
+            Cache::forget('weatherCollection');
 
             // Caching weather data
             Cache::put('weatherCollection', WeatherData::all(), 60 * 4);
@@ -147,7 +147,7 @@ class WeatherController extends Controller
             $responseArr = ['status' => '1', 'msg' => "Cache is successfully created!"];
         }else{
             // Clearning cached weather data
-            Cache::forget('weather');
+            Cache::forget('weatherCollection');
             $responseArr = ['status' => '1', 'msg' => "Cache is successfully cleared!"];
         }
 
